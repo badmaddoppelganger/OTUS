@@ -1,1 +1,1 @@
-git status
+'''Starting message'''
