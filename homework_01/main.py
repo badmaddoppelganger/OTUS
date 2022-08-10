@@ -4,20 +4,29 @@
 """
 
 
-def power_numbers():
+def power_numbers(*args):
     """
     функция, которая принимает N целых чисел,
     и возвращает список квадратов этих чисел
     >>> power_numbers(1, 2, 5, 7)
     <<< [1, 4, 25, 49]
     """
+    up_sqrt = [i**2 for i in args]
+    return up_sqrt
 
 
 # filter types
 ODD = "odd"
 EVEN = "even"
-PRIME = "prime"
+PRIME = "is_prime"
 
+def is_prime(digit):
+    """method that return that the digit is prime or not
+    >>> is_prime(5)
+    <<< True
+    """
+    a = [False if (digit % i) == 0 else True for i in range(2, int(digit / 2))]
+    return a
 
 def filter_numbers():
     """
