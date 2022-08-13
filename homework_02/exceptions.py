@@ -7,12 +7,16 @@
 
 
 class LowFuelError(Exception):
-    pass
+    # Init with def val
+    def __init__(self, message="Low Fuel!"):
+        super().__init__(message)
 
 
 class NotEnoughFuel(Exception):
-    pass
+    def __init__(self, message="Not enough fuel!"):
+        super().__init__(message)
 
 
 class CargoOverload(Exception):
-    pass
+    def __init__(self, message="Cargo overload!"):
+        super().__init__(message)
