@@ -8,34 +8,44 @@ def power_numbers(*args):
     """
     функция, которая принимает N целых чисел,
     и возвращает список квадратов этих чисел
-    >>> power_numbers(1, 2, 5, 7)
-    <<< [1, 4, 25, 49]
     """
-    up_sqrt = [i**2 for i in args]
+    up_sqrt = [i ** 2 for i in args]
     return up_sqrt
 
 
-# filter types
-ODD = "odd"
-EVEN = "even"
-PRIME = "is_prime"
-
 def is_prime(digit):
     """method that return that the digit is prime or not
-    >>> is_prime(5)
-    <<< True
     """
-    a = [False if (digit % i) == 0 else True for i in range(2, int(digit / 2))]
-    return a
+    for a in range(2, digit):
+        if (digit % a) == 0:
+            return False
+    else:
+        return True
 
-def filter_numbers():
+
+def is_odd(digit):
+    """method that return that the digit is odd or not
+    """
+    return digit % 2 == 1
+
+
+def is_even(digit):
+    """method that return that the digit is odd or not
+    """
+    return digit % 2 == 0
+
+
+# filter types
+ODD = is_odd
+EVEN = is_even
+PRIME = is_prime
+
+
+def filter_numbers(lst, func):
     """
     функция, которая на вход принимает список из целых чисел,
     и возвращает только чётные/нечётные/простые числа
     (выбор производится передачей дополнительного аргумента)
-
-    >>> filter_numbers([1, 2, 3], ODD)
-    <<< [1, 3]
-    >>> filter_numbers([2, 3, 4, 5], EVEN)
-    <<< [2, 4]
     """
+    result = filter(func, lst)
+    return result
