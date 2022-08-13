@@ -16,6 +16,8 @@ def power_numbers(*args):
 def is_prime(digit):
     """method that return that the digit is prime or not
     """
+    if digit in [0, 1]:
+        return False
     for a in range(2, digit):
         if (digit % a) == 0:
             return False
@@ -47,5 +49,5 @@ def filter_numbers(lst, func):
     и возвращает только чётные/нечётные/простые числа
     (выбор производится передачей дополнительного аргумента)
     """
-    result = filter(func, lst)
-    return result
+    ls = filter(func, lst)
+    return list(ls)
