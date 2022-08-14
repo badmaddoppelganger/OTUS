@@ -6,17 +6,15 @@
 """
 
 
+# "Pass" is don't needed - W0107: Unnecessary pass statement (unnecessary-pass)
+
 class LowFuelError(Exception):
-    # Init with def val
-    def __init__(self, message="Low Fuel!"):
-        super().__init__(message)
+    """Init new type of exception Low Fuel!"""
 
 
 class NotEnoughFuel(Exception):
-    def __init__(self, message="Not enough fuel!"):
-        super().__init__(message)
+    """Init new type of exception Not enough fuel!"""
 
 
 class CargoOverload(Exception):
-    def __init__(self, message="Cargo overload!"):
-        super().__init__(message)
+    """Init new type of exception Cargo overload!"""
